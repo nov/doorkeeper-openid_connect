@@ -10,6 +10,7 @@
 - [#313] Move Configuration documentation from README to Wiki
 - [#312] Raise `Errors::MissingRequiredClaim` instead of silently dropping a blank REQUIRED ID Token claim (`iss`/`sub`/`aud`/`exp`/`iat`) in `IdToken#as_json`, which previously could emit a non-conformant ID Token (OIDC Core 1.0 §2). OPTIONAL claims such as `nonce`/`auth_time` are still omitted when blank
 - [#311] Include the REQUIRED `client_secret_expires_at` member (value `0`, never expires) in the Dynamic Client Registration response whenever a `client_secret` is issued (RFC 7591 §3.2.1 / OpenID Connect Dynamic Client Registration 1.0 §3.2)
+- [#308] Fix `NameError: uninitialized constant Auth::ApplicationRecord` on boot when using a namespaced custom access grant model (e.g. `Auth::OAuthAccessGrant < ApplicationRecord`). Since v1.10.0 ([#241]) the `openid_request` association was wired inside an `ActiveSupport.on_load(:active_record)` block, which fires while `ActiveRecord::Base` is first loaded and constantizes the grant model too early. The association is now added from Doorkeeper's `AccessGrant` mixin `included` callback — at the model's own load time, without constantizing — mirroring the fix doorkeeper made in [#1830](https://github.com/doorkeeper-gem/doorkeeper/pull/1830) ([#306](https://github.com/doorkeeper-gem/doorkeeper-openid_connect/issues/306))
 
 ## v1.10.1 (2026-06-03)
 
