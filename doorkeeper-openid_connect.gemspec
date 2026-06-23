@@ -4,24 +4,25 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 require "doorkeeper/openid_connect/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "doorkeeper-openid_connect"
+  spec.name          = "nov-doorkeeper-openid_connect"
   spec.version       = Doorkeeper::OpenidConnect::VERSION
-  spec.authors       = ["Sam Dengler", "Markus Koller", "Nikita Bulai"]
+  spec.authors       = ["Nov Matake", "Sam Dengler", "Markus Koller", "Nikita Bulai"]
   spec.email         = [
+    "nov@matake.jp",
     "sam.dengler@playonsports.com",
     "markus-koller@gmx.ch",
     "bulajnikita@gmail.com",
   ]
-  spec.homepage      = "https://github.com/doorkeeper-gem/doorkeeper-openid_connect"
+  spec.homepage      = "https://github.com/nov/doorkeeper-openid_connect"
   spec.summary       = "OpenID Connect extension for Doorkeeper."
   spec.description   = "OpenID Connect extension for Doorkeeper."
   spec.license       = "MIT"
 
   spec.metadata = {
-    "homepage_uri" => "https://github.com/doorkeeper-gem/doorkeeper-openid_connect",
-    "changelog_uri" => "https://github.com/doorkeeper-gem/doorkeeper-openid_connect/blob/master/CHANGELOG.md",
-    "source_code_uri" => "https://github.com/doorkeeper-gem/doorkeeper-openid_connect",
-    "bug_tracker_uri" => "https://github.com/doorkeeper-gem/doorkeeper-openid_connect/issues",
+    "homepage_uri" => "https://github.com/nov/doorkeeper-openid_connect",
+    "changelog_uri" => "https://github.com/nov/doorkeeper-openid_connect/blob/master/CHANGELOG.md",
+    "source_code_uri" => "https://github.com/nov/doorkeeper-openid_connect",
+    "bug_tracker_uri" => "https://github.com/nov/doorkeeper-openid_connect/issues",
     "funding_uri" => "https://opencollective.com/doorkeeper-gem",
   }
 
